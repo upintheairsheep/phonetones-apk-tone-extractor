@@ -25,7 +25,7 @@ find "$input_dir" -type f -iname "*.apk" | while read -r apk_file; do
   apk_output_dir="${output_dir}/${apk_name}"
   
   # Extract audio and video assets using 7z
-  7z x -o"${apk_output_dir}" -ir'!*.mp3' -ir'!*.wav' -ir'!*.ogg' -ir'!*.mp4' -ir'!*.webm' "$apk_file"
+  7z x -o"${apk_output_dir}" -ir'!*.mp3' -ir'!*.wav' -ir'!*.ogg' -ir'!*.mp4' -ir'!*.webm' -ir'!*.wmv' -ir'!*.wma'  -ir'!*.m4a'  -ir'!*.flac' -ir'!*.raw' -ir'!*.pcm' -ir'!*.opus'  "$apk_file"
 
   # Preserve the directory path in the APK file
   find "${apk_output_dir}" -type d -empty -delete
